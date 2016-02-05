@@ -28,6 +28,8 @@ class Screen {
 	public:
 		Screen(int, int);
 		bool init();
+		void setPixel(int, int, Uint8, Uint8, Uint8);
+		void update();
 		bool processEvents();
 		void close();
 		virtual ~Screen();
