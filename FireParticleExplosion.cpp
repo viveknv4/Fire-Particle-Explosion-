@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
 		for(int i=0; i<swarm.NPARTICLES; i++){
 			Particle points = pParticles[i];
 			int x = (points.m_x+1) * (screen.SCREEN_WIDTH/2);
-			int y = (points.m_y+1) * (screen.SCREEN_HEIGHT/2);
+			int y = (points.m_y) * (screen.SCREEN_WIDTH/2) + screen.SCREEN_HEIGHT/2;
 
 			screen.setPixel(x,y,red,green,blue);
 		}

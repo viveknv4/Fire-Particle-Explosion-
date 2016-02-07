@@ -12,7 +12,7 @@
 class Swarm {
 	Particle*  m_particles;
 public:
-	const static int NPARTICLES = 5000;
+	const static int NPARTICLES = 3000;
 	Swarm();
 	virtual ~Swarm();
 	Particle* getParticles(){

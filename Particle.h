@@ -12,6 +12,10 @@ struct Particle {
 
 	double m_x;
 	double m_y;
+
+	double speed;
+    double direction;
+
 public:
 	Particle();
 	virtual ~Particle();
