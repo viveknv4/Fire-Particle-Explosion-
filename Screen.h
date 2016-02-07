@@ -32,6 +32,7 @@ class Screen {
 		void update();
 		bool processEvents();
 		void close();
+		void clearBuffer();
 		virtual ~Screen();
 };
 

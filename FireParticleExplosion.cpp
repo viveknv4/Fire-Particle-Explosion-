@@ -17,23 +17,29 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
-	srand(time(NULL));
+	//Initializing
 	Screen screen(800, 600);
 	if(screen.init() == false){
 		cout << "Couldn't Initialize SDL "<<endl;
 		return -1;
 	}
 
+	//Creating Random Particles
+	srand(time(NULL));
 	Swarm swarm;
 
 	//Game_Loop--------------------------------------
 	while(true){
 
+		//Changing Color
 		int elapsed = SDL_GetTicks();
 		int green = ((1+sin(elapsed * 0.0001)) * 128);
 		int red = ((1+sin(elapsed * 0.0002)) * 128);
 		int blue = ((1+sin(elapsed * 0.0003)) * 128);
 
+		//Displaying Random Particles
+		screen.clearBuffer();
+		swarm.update();
 		Particle* pParticles = swarm.getParticles();
 		for(int i=0; i<swarm.NPARTICLES; i++){
 			Particle points = pParticles[i];
@@ -43,20 +49,15 @@ int main(int argc, char *argv[]){
 			screen.setPixel(x,y,red,green,blue);
 		}
 
-		/*
-		for(int x=0; x<screen.SCREEN_WIDTH; x++){
-			for(int y=0; y<screen.SCREEN_HEIGHT; y++){
-
-				screen.setPixel(x,y,red,green,blue);
-			}
-		}*/
-
+		//Draw On Screen
 		screen.update();
+
+		//Checking for Messages and Events
 		if(screen.processEvents() == false)
 			break;
 	}
-	//------------------------------------------------
 
+	//Closing
 	screen.close();
 
 	return 0;

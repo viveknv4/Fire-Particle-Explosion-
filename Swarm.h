@@ -18,6 +18,7 @@ public:
 	Particle* getParticles(){
 		return m_particles;
 	}
+	void update();
 };
 
 #endif /* SWARM_H_ */

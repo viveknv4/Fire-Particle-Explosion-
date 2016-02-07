@@ -17,6 +17,14 @@ Particle::Particle() {
 }
 
 Particle::~Particle() {
-	// TODO Auto-generated destructor stub
+
+}
+
+void Particle::update(){
+	const double xspeed = 0.01 * (((2.0*rand())/RAND_MAX) - 1);
+	const double yspeed = 0.01 * (((2.0*rand())/RAND_MAX) - 1);
+
+	m_x += xspeed;
+	m_y += yspeed;
 }
 

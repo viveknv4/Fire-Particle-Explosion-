@@ -15,6 +15,7 @@ struct Particle {
 public:
 	Particle();
 	virtual ~Particle();
+	void update();
 };
 
 #endif /* PARTICLE_H_ */
