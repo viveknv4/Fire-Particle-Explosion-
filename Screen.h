@@ -23,7 +23,8 @@ class Screen {
 		SDL_Window *window;
 		SDL_Renderer *renderer;
 		SDL_Texture *texture;
-		Uint32 *buffer;
+		Uint32 *buffer1;
+		Uint32 *buffer2;
 
 	public:
 		Screen(int, int);
@@ -33,6 +34,7 @@ class Screen {
 		bool processEvents();
 		void close();
 		void clearBuffer();
+		void boxBlur();
 		virtual ~Screen();
 };
 

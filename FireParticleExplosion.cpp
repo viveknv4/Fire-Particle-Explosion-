@@ -38,7 +38,6 @@ int main(int argc, char *argv[]){
 		int blue = ((1+sin(elapsed * 0.0003)) * 128);
 
 		//Displaying Random Particles
-		screen.clearBuffer();
 		swarm.update();
 		Particle* pParticles = swarm.getParticles();
 		for(int i=0; i<swarm.NPARTICLES; i++){
@@ -48,6 +47,8 @@ int main(int argc, char *argv[]){
 
 			screen.setPixel(x,y,red,green,blue);
 		}
+
+		screen.boxBlur();
 
 		//Draw On Screen
 		screen.update();
